@@ -229,50 +229,78 @@
   font-weight: 400;
 }
 
-.intro__btn-inline-wrap {
-  display: inline-block;
-  position: relative;
-  padding: 2px;
-  border-radius: 8px;
-  overflow: hidden;
+.intro__btn--inline {
   margin: 0 0.15em;
   vertical-align: middle;
-}
-
-.intro__btn-inline-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: conic-gradient(from 0deg, #6F42C1 0%, #8b5cf6 20%, #a855f7 40%, #7c3aed 60%, #8b5cf6 80%, #6F42C1 100%);
-  z-index: 0;
-}
-
-.intro__btn--inline {
-  position: relative;
-  z-index: 1;
-  margin: 0;
   padding: 0.55rem 1.2rem;
-  font-size: 0.92rem;
-  border: none;
-  border-radius: 6px;
-  background: #f5f5f5;
-  color: #333333;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.intro__btn--inline:hover {
-  color: #333333;
-  background: #f5f5f5;
+  font-size: 0.95rem;
 }
 
 .intro__text {
-  margin: 0 0 1.5rem;
+  margin: 0;
   font-size: 1.4rem;
   color: #afa8a8;
   line-height: 1.55;
   font-weight: 400;
+}
+
+/* Social section */
+.social {
+  position: relative;
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem 1rem 1.25rem;
+  background: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.social::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.06) 15%,
+    rgba(0, 0, 0, 0.12) 50%,
+    rgba(0, 0, 0, 0.06) 85%,
+    transparent 100%
+  );
+}
+
+.social__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #888888;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.social__link:hover {
+  color: #666666;
+}
+
+.social__icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.social__text {
+  font-size: 1rem;
 }
 
 /* Dark mode intro */
@@ -306,23 +334,35 @@
   color: #888888;
 }
 
-.dark .intro__btn-inline-wrap::before {
-  background: conic-gradient(from 0deg, #8b7cb8 0%, #9d8bc9 20%, #a855f7 40%, #7c3aed 60%, #9d8bc9 80%, #8b7cb8 100%);
-}
-
-.dark .intro__btn--inline {
-  background: #1a1a1a;
-  color: #f0f0f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
 .dark .intro__btn--inline:hover {
   color: #f0f0f0;
-  background: #1a1a1a;
 }
 
 .dark .intro__cta-or {
   color: #aaaaaa;
+}
+
+.dark .social {
+  background: #000000;
+}
+
+.dark .social::after {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 15%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 85%,
+    transparent 100%
+  );
+}
+
+.dark .social__link {
+  color: #aaaaaa;
+}
+
+.dark .social__link:hover {
+  color: #cccccc;
 }
 
 .header::after {
