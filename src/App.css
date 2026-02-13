@@ -104,7 +104,7 @@
 }
 
 .dark .circle-ripple {
-  background: rgba(128, 90, 213, 0.05);
+  background: rgba(76, 16, 207, 0.05);
 }
 
 .dark .header {
@@ -113,7 +113,6 @@
 
 .dark .header__dark-btn {
   color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 12px rgba(128, 90, 213, 0.28);
 }
 
 .dark .header__dark-btn:hover {
@@ -124,7 +123,6 @@
 
 .dark .header__btn {
   color: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 0 12px rgba(128, 90, 213, 0.28);
 }
 
 .dark .header__btn:hover {

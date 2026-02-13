@@ -73,10 +73,10 @@ button:focus-visible {
   pointer-events: none;
   background: linear-gradient(
     to right,
-    rgba(100, 70, 160, 0.1) 0%,
+    rgba(61, 12, 160, 0.1) 0%,
     transparent 18%,
-    transparent 82%,
-    rgba(100, 70, 160, 0.1) 100%
+    transparent 90%,
+    rgba(61, 12, 160, 0.22) 100%
   );
   z-index: 9999;
 }
