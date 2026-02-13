@@ -73,9 +73,26 @@
   align-items: center;
   justify-content: center;
   background: linear-gradient(180deg, rgba(26, 21, 28, 0.97) 0%, rgba(20, 18, 26, 0.95) 100%);
-  padding: 1rem 7rem;
+  padding: 2rem 8rem;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.06) 15%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 85%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.06) 15%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 85%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.06) 15%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 85%, transparent 100%);
+  background-size: 1px 100%, 1px 100%, 100% 1px;
+  background-position: left top, right top, left bottom;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
@@ -86,7 +103,6 @@
   right: 0;
   bottom: 0;
   pointer-events: none;
-  /* Thin diagonal waves: top-left to bottom-right (135deg), 1px line every 2.5px = hundreds of close waves */
   background: repeating-linear-gradient(
     135deg,
     transparent 0px,
@@ -97,6 +113,7 @@
 }
 
 .hero__illustration {
+  display: block;
   position: relative;
   z-index: 1;
   max-width: 72%;
@@ -107,10 +124,6 @@
   opacity: 0.62;
   mask-image: linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.85) 65%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 45%, rgba(0,0,0,0.85) 65%, transparent 100%);
-}
-
-object.hero__illustration {
-  display: block;
 }
 
 :root:not(.dark) .hero {
@@ -126,6 +139,190 @@ object.hero__illustration {
     rgba(0, 0, 0, 0.055) 1.5px,
     rgba(0, 0, 0, 0.055) 2.5px
   );
+}
+
+/* Intro section */
+.intro {
+  position: relative;
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem 2rem 1.25rem;
+  background: #ffffff;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.intro::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.06) 15%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 85%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.06) 15%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 85%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.06) 15%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.06) 85%, transparent 100%);
+  background-size: 1px 100%, 1px 100%, 100% 1px;
+  background-position: left top, right top, left bottom;
+  background-repeat: no-repeat;
+}
+
+.intro__name {
+  margin: 0 0 0.25em;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000b6;
+  letter-spacing: -0.02em;
+}
+
+.intro__roles {
+  margin: 0 0 1.25rem;
+  font-size: 1.2rem;
+  color: #afa8a8;
+  font-weight: 400;
+}
+
+.intro__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.intro__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s;
+  border: 1px solid #d0d0d0;
+  background: #f5f5f5;
+  color: #333333;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.intro__btn:hover {
+  border-color: #999999;
+  color: #333333;
+}
+
+.intro__btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: #555555;
+}
+
+.intro__cta-or {
+  color: #888888;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.intro__btn-inline-wrap {
+  display: inline-block;
+  position: relative;
+  padding: 2px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 0.15em;
+  vertical-align: middle;
+}
+
+.intro__btn-inline-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #6F42C1 0%, #8b5cf6 20%, #a855f7 40%, #7c3aed 60%, #8b5cf6 80%, #6F42C1 100%);
+  z-index: 0;
+}
+
+.intro__btn--inline {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.92rem;
+  border: none;
+  border-radius: 6px;
+  background: #f5f5f5;
+  color: #333333;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.intro__btn--inline:hover {
+  color: #333333;
+  background: #f5f5f5;
+}
+
+.intro__text {
+  margin: 0 0 1.5rem;
+  font-size: 1.4rem;
+  color: #afa8a8;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* Dark mode intro */
+.dark .intro {
+  background: #000000;
+}
+
+.dark .intro__name {
+  color: #ffffff;
+}
+
+.dark .intro__roles,
+.dark .intro__text {
+  color: #d6cfcf;
+}
+
+.dark .intro__btn {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid rgba(160, 64, 240, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.2s;
+}
+
+.dark .intro__btn:hover {
+  border-color: rgba(160, 64, 240, 0.8);
+  color: #f0f0f0;
+}
+
+.dark .intro__btn-icon {
+  color: #888888;
+}
+
+.dark .intro__btn-inline-wrap::before {
+  background: conic-gradient(from 0deg, #8b7cb8 0%, #9d8bc9 20%, #a855f7 40%, #7c3aed 60%, #9d8bc9 80%, #8b7cb8 100%);
+}
+
+.dark .intro__btn--inline {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark .intro__btn--inline:hover {
+  color: #f0f0f0;
+  background: #1a1a1a;
+}
+
+.dark .intro__cta-or {
+  color: #aaaaaa;
 }
 
 .header::after {
@@ -156,7 +353,7 @@ object.hero__illustration {
   background: rgba(148, 141, 135, 0.05);
   transform: scale(0.4);
   opacity: 0;
-  animation: circle-expand 12s cubic-bezier(0.65, 0, 0.85, 1) infinite;
+  animation: circle-expand 10s cubic-bezier(0.65, 0, 0.85, 1) infinite;
   pointer-events: none;
 }
 
@@ -205,6 +402,14 @@ object.hero__illustration {
     rgba(255, 255, 255, 0.06) 85%,
     transparent 100%
   );
+}
+
+.dark .hero::after,
+.dark .intro::after {
+  background-image:
+    linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.06) 15%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 85%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.06) 15%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 85%, transparent 100%),
+    linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.06) 15%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 85%, transparent 100%);
 }
 
 @keyframes circle-expand {

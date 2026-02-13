@@ -92,6 +92,27 @@ function App() {
       <section className="hero" aria-label="Hero illustration">
         <img src="/hero.svg" alt="" className="hero__illustration" />
       </section>
+      <section className="intro">
+        <h1 className="intro__name">Adam Maatouk</h1>
+        <p className="intro__roles">Based in Montreal • FullStack Engineer • Founder • Gym Rat</p>
+        <div className="intro__cta">
+          <a href="https://www.linkedin.com/in/adammaatouk/" target="_blank" rel="noopener noreferrer" className="intro__btn">
+            <svg className="intro__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" /></svg>
+            Available for Hire
+          </a>
+          <span className="intro__cta-or">or</span>
+          <a href="mailto:adammaatouknb@gmail.com" className="intro__btn">
+            <svg className="intro__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+            Email Me
+          </a>
+        </div>
+        <p className="intro__text">
+          Do you want to see the fun side of my work? Dive deeper into my world.{' '}
+          <span className="intro__btn-inline-wrap">
+            <button type="button" className="intro__btn intro__btn--inline">Get to the fun side</button>
+          </span>
+        </p>
+      </section>
       <div className="circle-ripple" aria-hidden />
       <div className="circle-ripple circle-ripple--2" aria-hidden />
       <div className="circle-ripple circle-ripple--3" aria-hidden />
