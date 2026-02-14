@@ -3,6 +3,7 @@ import './App.css'
 import { playClickSfx } from './utils/playClickSfx'
 import { logConsoleEasterEgg } from './consoleEasterEgg'
 import 'react-github-calendar/tooltips.css'
+import { GitHubCalendar } from 'react-github-calendar'
 
 const GitHubCalendarSection = lazy(() => import('./GitHubCalendarSection'))
 
@@ -243,6 +244,7 @@ function App() {
           </div>
         </div>
       </header>
+      <div className="header-spacer" />
       <section className="hero" ref={heroRef} aria-label="Hero illustration">
         <img src="/hero.svg" alt="" className="hero__illustration" />
       </section>
@@ -524,7 +526,15 @@ function App() {
           <section className="github" aria-label="GitHub contributions">
             <h2 className="github__subtitle">Contributions</h2>
             <h2 className="github__title">Github</h2>
-            <div className="github__chart-wrap github__chart-wrap--loading" aria-busy="true" />
+            <div className="github__chart-wrap" aria-busy="false">
+              <GitHubCalendar 
+                username="AdamMTK-NB" 
+                style={{ width: '100%', minWidth: '750px' }}
+                blockSize={12}
+                blockMargin={4}
+                fontSize={14}
+              />
+            </div>
           </section>
         }
       >
