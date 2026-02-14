@@ -34,6 +34,51 @@ const SKILLS: { name: string; url: string; logo: string; logoUrl?: string }[] = 
   { name: 'Flutter', url: 'https://docs.flutter.dev', logo: 'flutter' },
 ]
 
+type Project = {
+  id: string
+  title: string
+  subtext: string
+  techStack: string
+  image: string
+  websiteUrl?: string
+  sourceUrl?: string
+}
+
+const PROJECTS: Project[] = [
+  {
+    id: 'sortify',
+    title: 'Sortify: Automated Waste Management System',
+    subtext: 'Developed an AI-powered waste classification system using Python and YOLOv5, achieving 92% detection accuracy.',
+    techStack: 'Python, YOLOv5, Arduino, Raspberry Pi, PyTorch, NumPy',
+    image: 'sortify.png',
+  },
+  {
+    id: 'better-call-saul',
+    title: 'Better Call Saul AI – ConUHacks IX Winner',
+    subtext: 'Led a 4-person team to build a full-stack AI-powered legal assistant. Integrated speech recognition and translation APIs for bilingual voice interaction. Awarded Hackathon Winner at ConUHacks IX.',
+    techStack: 'React, TypeScript, Vite, AI API calls, Athena AI',
+    image: 'bettercallsaul.png',
+    websiteUrl: 'https://better-call-saul-ai-delta.vercel.app/',
+    sourceUrl: 'https://github.com/AdamMTK-NB/BetterCallSaulAI',
+  },
+  {
+    id: 'shadow-realm',
+    title: 'Shadow Realm – 2D Hack-and-Slash Adventure',
+    subtext: 'Led a 3-person team to develop a 2D hack-and-slash platformer in Unity with core combat, level progression, and responsive player movement and enemy interactions.',
+    techStack: 'Unity (2D), C#, Unity Animator, Tilemap, Sprite animation, Physics2D, Collision, State Machines',
+    image: 'shadowrealm.png',
+    websiteUrl: 'https://netbionic.itch.io/shadow-realm',
+  },
+  {
+    id: 'virtual-art-gallery',
+    title: 'Virtual Art Gallery',
+    subtext: 'Led a 4-person team to build an immersive 3D art gallery in Unity with real-time multiplayer, first-person navigation, and Firebase-based chat.',
+    techStack: 'Unity (3D), C#, Python, Firebase, First-Person Controller, Unity Physics, UI Toolkit',
+    image: 'artgallery.png',
+    websiteUrl: 'https://netbionic.itch.io/virtual-art-gallery',
+  },
+]
+
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
     const stored = localStorage.getItem('portfolio-dark-mode')
@@ -42,6 +87,9 @@ function App() {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
   const [experienceTab, setExperienceTab] = useState<'work' | 'education'>('work')
   const [showHeaderLogo, setShowHeaderLogo] = useState(false)
+  const [projectIndex, setProjectIndex] = useState(0)
+  const [leavingIndex, setLeavingIndex] = useState<number | null>(null)
+  const [transitionDirection, setTransitionDirection] = useState<'next' | 'prev' | null>(null)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const heroRef = useRef<HTMLElement | null>(null)
 
@@ -103,6 +151,40 @@ function App() {
   const handleExperienceTab = (tab: 'work' | 'education') => {
     playClickSfx()
     setExperienceTab(tab)
+  }
+
+  const runTransition = (direction: 'next' | 'prev', nextIndex: number) => {
+    setTransitionDirection(direction)
+    setLeavingIndex(projectIndex)
+    setProjectIndex(nextIndex)
+  }
+
+  useEffect(() => {
+    if (leavingIndex === null) return
+    const t = setTimeout(() => {
+      setLeavingIndex(null)
+      setTransitionDirection(null)
+    }, 400)
+    return () => clearTimeout(t)
+  }, [leavingIndex])
+
+  const handleProjectPrev = () => {
+    playClickSfx()
+    const next = projectIndex === 0 ? PROJECTS.length - 1 : projectIndex - 1
+    runTransition('prev', next)
+  }
+
+  const handleProjectNext = () => {
+    playClickSfx()
+    const next = projectIndex === PROJECTS.length - 1 ? 0 : projectIndex + 1
+    runTransition('next', next)
+  }
+
+  const handleProjectDot = (index: number) => {
+    if (index === projectIndex) return
+    playClickSfx()
+    const direction = index > projectIndex ? 'next' : 'prev'
+    runTransition(direction, index)
   }
 
   return (
@@ -320,6 +402,112 @@ function App() {
               <span className="skills__name">{skill.name}</span>
             </a>
           ))}
+        </div>
+      </section>
+      <section className="projects" aria-label="Featured projects">
+        <h2 className="projects__subtitle">Featured</h2>
+        <h2 className="projects__title">Projects</h2>
+        <div className="projects__carousel">
+          <div className="projects__carousel-row">
+          <button
+            type="button"
+            className="projects__nav projects__nav--prev"
+            onClick={handleProjectPrev}
+            aria-label="Previous project"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            <span className="projects__nav-label">Prev</span>
+          </button>
+          <div className="projects__track">
+            {PROJECTS.map((project, i) => {
+              const isActive = i === projectIndex
+              const isLeaving = i === leavingIndex
+              const leaveToLeft = isLeaving && transitionDirection === 'next'
+              const leaveToRight = isLeaving && transitionDirection === 'prev'
+              const enterFromRight = isActive && transitionDirection === 'next'
+              const enterFromLeft = isActive && transitionDirection === 'prev'
+              return (
+              <div
+                key={project.id}
+                className={`projects__card ${isActive ? 'projects__card--active' : ''} ${isLeaving ? 'projects__card--leaving' : ''} ${leaveToLeft ? 'projects__card--leave-to-left' : ''} ${leaveToRight ? 'projects__card--leave-to-right' : ''} ${enterFromRight ? 'projects__card--enter-from-right' : ''} ${enterFromLeft ? 'projects__card--enter-from-left' : ''}`}
+                aria-hidden={!isActive && !isLeaving}
+              >
+                <div className="projects__image-wrap">
+                  <img
+                    src={project.image.startsWith('/') ? project.image : `/${project.image}`}
+                    alt=""
+                    className="projects__image"
+                    loading={i === projectIndex ? 'eager' : 'lazy'}
+                  />
+                  <div className="projects__tech-footer" role="presentation">
+                    <span className="projects__tech-text">{project.techStack}</span>
+                  </div>
+                </div>
+              </div>
+              )
+            })}
+          </div>
+          <button
+            type="button"
+            className="projects__nav projects__nav--next"
+            onClick={handleProjectNext}
+            aria-label="Next project"
+          >
+            <span className="projects__nav-label">Next</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+          </div>
+          {PROJECTS[projectIndex] && (
+            <div className="projects__body">
+              <h3 className="projects__card-title">{PROJECTS[projectIndex].title}</h3>
+              <p className="projects__card-subtext">{PROJECTS[projectIndex].subtext}</p>
+              <div className="projects__links-wrap">
+                {(PROJECTS[projectIndex].websiteUrl || PROJECTS[projectIndex].sourceUrl) ? (
+                  <div className="projects__links">
+                    {PROJECTS[projectIndex].websiteUrl && (
+                      <a
+                        href={PROJECTS[projectIndex].websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="projects__link"
+                      >
+                        Website
+                      </a>
+                    )}
+                    {PROJECTS[projectIndex].sourceUrl && (
+                      <a
+                        href={PROJECTS[projectIndex].sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="projects__link"
+                      >
+                        Source code
+                      </a>
+                    )}
+                  </div>
+                ) : (
+                  <div className="projects__links-placeholder" aria-hidden />
+                )}
+              </div>
+            </div>
+          )}
+          <div className="projects__dots" role="tablist" aria-label="Project selection">
+            {PROJECTS.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                role="tab"
+                aria-selected={i === projectIndex}
+                aria-label={`Project ${i + 1}`}
+                className={`projects__dot ${i === projectIndex ? 'projects__dot--active' : ''}`}
+                onClick={() => handleProjectDot(i)}
+              />
+            ))}
+          </div>
         </div>
       </section>
       <div className="circle-ripple" aria-hidden />
