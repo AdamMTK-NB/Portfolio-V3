@@ -1202,7 +1202,7 @@
   border-top: 1px dashed rgba(31, 29, 29, 0.35);
   padding: 0.5rem 0.75rem;
   transform: translateY(100%);
-  transition: transform 0.25s ease;
+  transition: none;
   overflow: hidden;
 }
 
@@ -1267,7 +1267,7 @@
   border: 1px dashed rgba(31, 29, 29, 0.35);
   border-radius: 6px;
   background: #d2d0d6;
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  transition: none;
 }
 
 .projects__link:hover {
@@ -1292,7 +1292,7 @@
   background: #d2d0d6;
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s, transform 0.2s;
+  transition: none;
 }
 
 .projects__dot:hover {
