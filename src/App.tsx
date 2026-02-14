@@ -10,7 +10,10 @@ function App() {
     return stored === 'true'
   })
   const [isMusicPlaying, setIsMusicPlaying] = useState(false)
+  const [experienceTab, setExperienceTab] = useState<'work' | 'education'>('work')
+  const [showHeaderLogo, setShowHeaderLogo] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const heroRef = useRef<HTMLElement | null>(null)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode)
@@ -26,6 +29,18 @@ function App() {
       audio.pause()
       audio.src = ''
     }
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!heroRef.current) return
+      const heroBottom = heroRef.current.getBoundingClientRect().bottom
+      setShowHeaderLogo(heroBottom < 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const handleDarkModeClick = () => {
@@ -55,9 +70,17 @@ function App() {
     document.body.removeChild(link)
   }
 
+  const handleExperienceTab = (tab: 'work' | 'education') => {
+    playClickSfx()
+    setExperienceTab(tab)
+  }
+
   return (
     <div className="app">
       <header className="header">
+        <div className={`header__logo ${showHeaderLogo ? 'header__logo--visible' : ''}`}>
+          <img src="/hero.svg" alt="" className="header__logo-img" />
+        </div>
         <div className="header__btns">
           <button
             type="button"
@@ -99,7 +122,7 @@ function App() {
           </button>
         </div>
       </header>
-      <section className="hero" aria-label="Hero illustration">
+      <section className="hero" ref={heroRef} aria-label="Hero illustration">
         <img src="/hero.svg" alt="" className="hero__illustration" />
       </section>
       <section className="intro">
@@ -163,6 +186,87 @@ function App() {
               </svg>
               Resume
             </button>
+          </div>
+        </div>
+      </section>
+      <section className="experience">
+        <div className="experience__tabs">
+          <button
+            type="button"
+            className={`experience__tab ${experienceTab === 'work' ? 'experience__tab--active' : ''}`}
+            onClick={() => handleExperienceTab('work')}
+          >
+            Work
+          </button>
+          <button
+            type="button"
+            className={`experience__tab ${experienceTab === 'education' ? 'experience__tab--active' : ''}`}
+            onClick={() => handleExperienceTab('education')}
+          >
+            Education
+          </button>
+        </div>
+        <div className="experience__content">
+          <div className={`experience__panel experience__panel--${experienceTab}`}>
+          {experienceTab === 'work' && (
+            <ul className="experience__timeline">
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
+                  <img src="/athena.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Athena AI / Devfortress</h3>
+                    <span className="experience__dates">Mar 2025 – May 2025</span>
+                  </div>
+                  <p className="experience__role">Software Engineering Intern</p>
+                  <ul className="experience__bullets">
+                    <li>Built and shipped production React and TypeScript features used by live users, improving frontend performance and load times by 35%.</li>
+                    <li>Refactored component architecture and state management, reducing unnecessary re-renders and improving UI responsiveness by 28%.</li>
+                    <li>Developed Python-based AI evaluation pipelines to analyze model outputs and identify failure cases, increasing model accuracy by 18%.</li>
+                    <li>Implemented real-time model tuning and fixes, reducing incorrect or low-confidence AI responses by 22%.</li>
+                    <li>Diagnosed and resolved production issues using logs and metrics, reducing recurring user-reported bugs by 25%.</li>
+                    <li>Supported live product demos at World Summit AI, increasing partner engagement and inbound interest by approximately 15%.</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          )}
+          {experienceTab === 'education' && (
+            <ul className="experience__timeline">
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--edu experience__icon--img">
+                  <img src="/concordia.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Concordia University</h3>
+                    <span className="experience__dates">Aug 2025 – May 2029</span>
+                  </div>
+                  <p className="experience__role">Bachelor's in Software Engineering</p>
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--edu experience__icon--img">
+                  <img src="/maisonneuve.jpg" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Collège de Maisonneuve</h3>
+                    <span className="experience__dates">Sep 2022 – May 2025</span>
+                  </div>
+                  <p className="experience__role">Associate's Degree in Computer Science</p>
+                  <ul className="experience__bullets">
+                    <li>Mandatory Internship</li>
+                  </ul>
+                  <a href="/Adam_Maatouk_Transcript.pdf" className="experience__project-btn" target="_blank" rel="noopener noreferrer" download>
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Transcript
+                  </a>
+                </div>
+              </li>
+            </ul>
+          )}
           </div>
         </div>
       </section>

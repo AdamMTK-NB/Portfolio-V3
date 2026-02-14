@@ -29,6 +29,16 @@ body {
   min-height: 100vh;
 }
 
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -50,7 +60,7 @@ button:hover {
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 /* Dark mode (toggle via .dark on html) */

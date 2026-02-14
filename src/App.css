@@ -20,11 +20,35 @@
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 0 24px;
   padding-right: 35.5rem;
-  padding-left: 38rem;
+  padding-left: 1.5rem;
   box-sizing: border-box;
+}
+
+.header__logo {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  pointer-events: none;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-left: 34rem;
+}
+
+.header__logo--visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.header__logo-img {
+  height: 100%;
+  width: auto;
+  max-height: 40px;
+  object-fit: contain;
 }
 
 .header__btns {
@@ -45,7 +69,14 @@
   color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
   border-radius: 50%;
-  transition: color 0.2s, background-color 0.2s, box-shadow 0.2s;
+  transition: color 0.2s, background-color 0.2s;
+  outline: none;
+}
+
+.header__btn:focus,
+.header__btn:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .header__btn:hover {
@@ -209,6 +240,13 @@
   color: #333333;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  outline: none;
+}
+
+.intro__btn:focus,
+.intro__btn:active {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .intro__btn:hover {
@@ -235,6 +273,13 @@
   padding: 0.55rem 1.2rem;
   font-size: 0.95rem;
   position: relative;
+  outline: none;
+}
+
+.intro__btn--inline:focus,
+.intro__btn--inline:active {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .intro__btn--inline[data-tooltip]:hover::before {
@@ -487,6 +532,13 @@
   border-radius: 8px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
   transition: border-color 0.2s, background 0.2s;
+  outline: none;
+}
+
+.career__resume-btn:focus,
+.career__resume-btn:active {
+  outline: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 
 .career__resume-btn:hover {
@@ -525,6 +577,12 @@
   transition: border-color 0.2s;
 }
 
+.dark .career__resume-btn:focus,
+.dark .career__resume-btn:active {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 .dark .career__resume-btn:hover {
   border-color: rgba(160, 64, 240, 0.8);
   background: #1a1a1a;
@@ -532,6 +590,384 @@
 
 .dark .career__resume-icon {
   color: #888888;
+}
+
+/* Experience (Work / Education) section */
+.experience {
+  position: relative;
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem 1.25rem;
+  background: #ffffff;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  left: -22rem;
+  right: -22rem;
+  bottom: -8rem;
+  height: 16rem;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.06) 20%,
+      rgba(0, 0, 0, 0.12) 50%,
+      rgba(0, 0, 0, 0.06) 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.06) 20%,
+      rgba(0, 0, 0, 0.12) 50%,
+      rgba(0, 0, 0, 0.06) 80%,
+      transparent 100%
+    );
+  background-size: 1px 100%, 1px 100%;
+  background-position: 24% 0, 76% 0;
+  background-repeat: no-repeat;
+}
+
+.experience::after {
+  content: '';
+  position: absolute;
+  left: -12rem;
+  right: -12rem;
+  bottom: 0;
+  height: 1px;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.06) 20%,
+      rgba(0, 0, 0, 0.12) 50%,
+      rgba(0, 0, 0, 0.06) 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.06) 20%,
+      rgba(0, 0, 0, 0.12) 50%,
+      rgba(0, 0, 0, 0.06) 80%,
+      transparent 100%
+    );
+  background-size: 35% 1px, 35% 1px;
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat;
+}
+
+.experience__tabs {
+  display: flex;
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 0;
+}
+
+.experience__tab {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: inherit;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+}
+
+.experience__tab:focus,
+.experience__tab:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.experience__tab:first-child.experience__tab--active {
+  border-radius: 6px 0 0 6px;
+}
+
+.experience__tab:last-child.experience__tab--active {
+  border-radius: 0 6px 6px 0;
+}
+
+.experience__tab:hover:not(.experience__tab--active) {
+  color: #4b5563;
+}
+
+.experience__tab--active {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+.experience__content {
+  padding-top: 1.5rem;
+  position: relative;
+  min-height: 200px;
+}
+
+.experience__panel {
+  animation: experience-fade-in 0.3s ease-out;
+}
+
+@keyframes experience-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience__timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  padding-left: 2.5rem;
+  border-left: 2px solid rgba(0, 0, 0, 0.08);
+  margin-left: 1.75rem;
+}
+
+.experience__entry {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.experience__entry:last-child {
+  padding-bottom: 0;
+}
+
+.experience__icon {
+  position: absolute;
+  left: -3.5rem;
+  top: 0.15rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #e8e8e8;
+  color: #333333;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d0d0d0;
+  box-sizing: border-box;
+}
+
+.experience__icon--edu {
+  background: #f5f5f5;
+  border-color: #c0c0c0;
+}
+
+.experience__icon--img {
+  padding: 0;
+  overflow: hidden;
+}
+
+.experience__icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.experience__body {
+  display: block;
+}
+
+.experience__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.3;
+}
+
+.experience__dates {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 400;
+}
+
+.experience__role {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: #555555;
+  font-weight: 400;
+}
+
+.experience__bullets {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.5;
+}
+
+.experience__bullets li {
+  margin-bottom: 0.25rem;
+}
+
+.experience__project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: inherit;
+  text-decoration: none;
+  color: #333333;
+  background: #f0f0f0;
+  border: 1px solid #d8d8d8;
+  border-radius: 6px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.experience__project-btn:hover {
+  background: #e5e5e5;
+  border-color: #ccc;
+}
+
+.experience__project-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.dark .experience {
+  background: #000000;
+}
+
+.dark .experience::before {
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    );
+  background-size: 1px 100%, 1px 100%;
+  background-position: 24% 0, 76% 0;
+  background-repeat: no-repeat;
+}
+
+.dark .experience::after {
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0.06) 80%,
+      transparent 100%
+    );
+  background-size: 35% 1px, 35% 1px;
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat;
+}
+
+.dark .experience__tabs {
+  background: #2a3541;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.dark .experience__tab {
+  color: #9ca3af;
+}
+
+.dark .experience__tab:hover:not(.experience__tab--active) {
+  color: #d1d5db;
+}
+
+.dark .experience__tab--active {
+  background: #0a0f18;
+  color: #ffffff;
+}
+
+.dark .experience__timeline {
+  border-left-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .experience__icon {
+  background: #1a1a1a;
+  color: #e8e8e8;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .experience__icon--edu {
+  background: #222222;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.dark .experience__title {
+  color: #ffffff;
+}
+
+.dark .experience__dates {
+  color: #aaaaaa;
+}
+
+.dark .experience__role {
+  color: #b0b0b0;
+}
+
+.dark .experience__bullets {
+  color: #b0b0b0;
+}
+
+.dark .experience__project-btn {
+  background: #2a2a2a;
+  color: #e8e8e8;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .experience__project-btn:hover {
+  background: #333333;
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .header::after {
@@ -589,7 +1025,6 @@
 .dark .header__dark-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  box-shadow: 0 0 16px rgba(128, 90, 213, 0.4);
 }
 
 .dark .header__btn {
@@ -599,7 +1034,6 @@
 .dark .header__btn:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  box-shadow: 0 0 16px rgba(128, 90, 213, 0.4);
 }
 
 .dark .header::after {
