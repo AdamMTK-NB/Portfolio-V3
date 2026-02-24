@@ -73,6 +73,8 @@ Portfolio-V3/
 │   ├── utils/
 │   │   ├── playClickSfx.ts
 │   │   └── lockClickSound.ts
+├── api/
+│   └── github-contributions.ts  # Serverless API for private contributions (Vercel)
 ├── index.html
 ├── package.json
 ├── tsconfig.json
@@ -85,7 +87,7 @@ Portfolio-V3/
 - **Content** — Edit `SKILLS`, `PROJECTS`, and experience copy in `src/App.tsx`.
 - **Resume** — Replace `public/resume.pdf` and keep the filename or update the download link in the Career section.
 - **Music** — Replace `public/jazz.mp3` or change `MUSIC_SRC` in `App.tsx`.
-- **GitHub calendar** — Username is set in `src/GitHubCalendarSection.tsx`; ensure the component is wired to your GitHub profile.
+- **GitHub calendar** — Username is set in `src/GitHubCalendarSection.tsx`. To show **private contributions**, deploy to Vercel and add a `GITHUB_TOKEN` environment variable (GitHub Personal Access Token with `read:user` scope). The `api/github-contributions.ts` serverless function will fetch contributions via GitHub GraphQL, including private commits. Without the token, the calendar shows public contributions only (via `react-github-calendar`).
 
 ## License
 
