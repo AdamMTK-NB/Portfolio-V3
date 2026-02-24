@@ -35,7 +35,7 @@ function GitHubCalendarSectionInner({ darkMode }: { darkMode: boolean }) {
       <div className="github__chart-wrap">
         <GitHubCalendar
           username={GITHUB_USERNAME}
-          year={2026}
+          year={2025}
           colorScheme={darkMode ? 'dark' : 'light'}
           blockSize={11}
           blockMargin={2.4}
