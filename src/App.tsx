@@ -432,16 +432,53 @@ function App() {
           {experienceTab === 'hackathons' && (
             <ul className="experience__timeline">
               <li className="experience__entry">
-                <div className="experience__icon">H</div>
+                <div className="experience__icon experience__icon--img">
+                  <img src="/CareXR.png" alt="" className="experience__icon-img" />
+                </div>
                 <div className="experience__body">
                   <div className="experience__header">
-                    <h3 className="experience__title">Hackathons</h3>
-                    <span className="experience__dates">More soon</span>
+                    <h3 className="experience__title">Before You Go - Pediatric VR Simulator</h3>
+                    <span className="experience__dates">Feb 2025</span>
                   </div>
-                  <p className="experience__role">Building and shipping under pressure.</p>
+                  <p className="experience__role">2nd Place - CareXR Hack - Solo</p>
                   <ul className="experience__bullets">
-                    <li>I am preparing this section with my recent and upcoming hackathon projects.</li>
-                    <li>Check back soon for event names, rankings, and project links.</li>
+                    <li>Built a fully interactive Meta Quest 3 VR application in 48 hours with 2 complete medical simulations.</li>
+                    <li>Resolved OpenXR conflicts by engineering a modular XR system enabling stable multi-scene execution.</li>
+                    <li>Improved simulation usability by applying hospital-based design principles to reduce cognitive load.</li>
+                  </ul>
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
+                  <img src="/Woz.jpg" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Underdog - Sports Betting Recovery App</h3>
+                    <span className="experience__dates">Mar 2025</span>
+                  </div>
+                  <p className="experience__role">3rd Place - BuildFast Hackathon - Solo</p>
+                  <ul className="experience__bullets">
+                    <li>Built and shipped a complete mobile app in 48 hours including onboarding, tracking, and feedback systems.</li>
+                    <li>Differentiated product by targeting a niche recovery market through financial discipline UX design.</li>
+                    <li>Placed 3rd overall as a solo developer among teams based on execution speed, product clarity, and usability.</li>
+                  </ul>
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
+                  <img src="/ConuhacksIX.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Better Call Saul AI - Legal Assistant</h3>
+                    <span className="experience__dates">Jan 2025</span>
+                  </div>
+                  <p className="experience__role">Winner - ConUHacks IX</p>
+                  <ul className="experience__bullets">
+                    <li>Led a 4-person team to build a bilingual AI legal assistant in 24 hours, leading to a win.</li>
+                    <li>Achieved 90%+ accuracy by integrating speech recognition and translation pipelines across French and English.</li>
+                    <li>Delivered a real-time AI demo recognized for usability, originality, and real-world impact.</li>
                   </ul>
                 </div>
               </li>
