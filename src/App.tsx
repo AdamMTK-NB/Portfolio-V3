@@ -50,9 +50,29 @@ type Project = {
   image: string
   websiteUrl?: string
   sourceUrl?: string
+  /** Use `contain` for tall/narrow or low-res screenshots so they aren’t upscaled to fill the 16:9 frame */
+  imageObjectFit?: 'cover' | 'contain'
 }
 
 const PROJECTS: Project[] = [
+  {
+    id: 'before-you-go',
+    title: 'Before You Go – Pediatric VR Simulator',
+    subtext: 'Built solo in 48 hours for the CareXR Hackathon: a Meta Quest 3 VR app that helps pediatric patients understand procedures through interactive simulations.',
+    techStack: 'Unity 6.3, C#, OpenXR, XR Interaction Toolkit, URP, Meta Quest 3',
+    image: 'BeforeYouGo.jpg',
+    sourceUrl: 'https://github.com/AdamMTK-NB/BeforeYouGo',
+    imageObjectFit: 'contain',
+  },
+  {
+    id: 'underdog',
+    title: 'Underdog – Sports Betting Recovery App',
+    subtext: 'Built and shipped a complete mobile app in 48 hours as a solo developer, focused on onboarding, tracking, and behavior-change UX.',
+    techStack: 'React Native, TypeScript, Expo',
+    image: 'Underdog.jpg',
+    websiteUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fbuild.withwoz.com%2Fpublic-app-preview%3FwebUrl%3Dhttps%253A%252F%252Fwithwoz-apps--instant-bovid-338.expo.app%26projectName%3DUnderdog%26userName%3DAdam%2BMaatouk&urlhash=Kz8h&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BM%2BHTq1%2FIRsmlbguZUsW3xQ%3D%3D',
+    imageObjectFit: 'contain',
+  },
   {
     id: 'sortify',
     title: 'Sortify: Automated Waste Management System',
@@ -544,8 +564,10 @@ function App() {
                   <img
                     src={project.image.startsWith('/') ? project.image : `/${project.image}`}
                     alt=""
-                    className="projects__image"
+                    className={`projects__image${project.imageObjectFit === 'contain' ? ' projects__image--contain' : ''}`}
                     loading={i === projectIndex ? 'eager' : 'lazy'}
+                    decoding="async"
+                    fetchPriority={i === projectIndex ? 'high' : 'low'}
                   />
                   <div className="projects__tech-footer" role="presentation">
                     <span className="projects__tech-text">{project.techStack}</span>
