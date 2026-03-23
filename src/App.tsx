@@ -7,6 +7,7 @@ import { GitHubCalendar } from 'react-github-calendar'
 const GitHubCalendarSection = lazy(() => import('./GitHubCalendarSection'))
 
 const MUSIC_SRC = '/jazz.mp3'
+const LAST_UPDATED = 'Mar 23, 2026'
 
 const SKILLS: { name: string; url: string; logo: string; logoUrl?: string }[] = [
   { name: 'JavaScript', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript', logo: 'js' },
@@ -684,6 +685,7 @@ function App() {
             Meet my chaotic coworkers
           </button>
         </div>
+        <p className="footer-name__updated">Last updated: {LAST_UPDATED}</p>
       </footer>
       {showCats && (
         <div className="cats-modal" role="dialog" aria-modal="true" aria-label="Cat photo gallery">

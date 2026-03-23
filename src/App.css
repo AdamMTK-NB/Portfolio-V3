@@ -2114,6 +2114,13 @@
   margin-top: 0.25rem;
 }
 
+.footer-name__updated {
+  margin: 0.9rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
 /* Cat gallery modal */
 .cats-modal {
   position: fixed;
@@ -2346,6 +2353,10 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.dark .footer-name__updated {
+  color: #9ca3af;
 }
 
 /* ============================================
