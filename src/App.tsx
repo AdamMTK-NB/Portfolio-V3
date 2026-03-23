@@ -95,7 +95,7 @@ function App() {
   const [showCats, setShowCats] = useState(false)
   const [zoomedCatId, setZoomedCatId] = useState<number | null>(null)
   const [missingCats, setMissingCats] = useState<Set<number>>(new Set())
-  const [experienceTab, setExperienceTab] = useState<'work' | 'education'>('work')
+  const [experienceTab, setExperienceTab] = useState<'work' | 'education' | 'hackathons'>('work')
   const [showHeaderLogo, setShowHeaderLogo] = useState(false)
   const [projectIndex, setProjectIndex] = useState(0)
   const [leavingIndex, setLeavingIndex] = useState<number | null>(null)
@@ -180,7 +180,7 @@ function App() {
     document.body.removeChild(link)
   }
 
-  const handleExperienceTab = (tab: 'work' | 'education') => {
+  const handleExperienceTab = (tab: 'work' | 'education' | 'hackathons') => {
     setExperienceTab(tab)
   }
 
@@ -348,6 +348,13 @@ function App() {
           >
             Education
           </button>
+          <button
+            type="button"
+            className={`experience__tab ${experienceTab === 'hackathons' ? 'experience__tab--active' : ''}`}
+            onClick={() => handleExperienceTab('hackathons')}
+          >
+            Hackathons
+          </button>
         </div>
         <div className="experience__content">
           <div className={`experience__panel experience__panel--${experienceTab}`}>
@@ -418,6 +425,24 @@ function App() {
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Transcript
                   </a>
+                </div>
+              </li>
+            </ul>
+          )}
+          {experienceTab === 'hackathons' && (
+            <ul className="experience__timeline">
+              <li className="experience__entry">
+                <div className="experience__icon">H</div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Hackathons</h3>
+                    <span className="experience__dates">More soon</span>
+                  </div>
+                  <p className="experience__role">Building and shipping under pressure.</p>
+                  <ul className="experience__bullets">
+                    <li>I am preparing this section with my recent and upcoming hackathon projects.</li>
+                    <li>Check back soon for event names, rankings, and project links.</li>
+                  </ul>
                 </div>
               </li>
             </ul>
