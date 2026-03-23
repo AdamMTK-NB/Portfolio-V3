@@ -62,7 +62,7 @@ A responsive, single-page portfolio built with React and TypeScript. Features da
 
 ```
 Portfolio-V3/
-├── public/           # Static assets (hero.svg, images, resume.pdf, jazz.mp3, etc.)
+├── public/           # Static assets (hero.svg, images, Adam_Maatouk_Resume.pdf, jazz.mp3, etc.)
 ├── src/
 │   ├── App.tsx       # Main app, sections, state (dark mode, music, projects, experience)
 │   ├── App.css       # Layout, components, responsive, dark mode
@@ -85,7 +85,7 @@ Portfolio-V3/
 ## Customization
 
 - **Content** — Edit `SKILLS`, `PROJECTS`, and experience copy in `src/App.tsx`.
-- **Resume** — Replace `public/resume.pdf` and keep the filename or update the download link in the Career section.
+- **Resume** — File is `public/Adam_Maatouk_Resume.pdf` (linked from the Career section).
 - **Music** — Replace `public/jazz.mp3` or change `MUSIC_SRC` in `App.tsx`.
 - **GitHub calendar** — Username is set in `src/GitHubCalendarSection.tsx`. To show **private contributions**, deploy to Vercel and add a `GITHUB_TOKEN` environment variable (GitHub Personal Access Token with `read:user` scope). The `api/github-contributions.ts` serverless function will fetch contributions via GitHub GraphQL, including private commits. Without the token, the calendar shows public contributions only (via `react-github-calendar`).
 

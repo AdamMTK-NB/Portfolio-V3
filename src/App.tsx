@@ -194,7 +194,7 @@ function App() {
 
   const handleResumeDownload = () => {
     const link = document.createElement('a')
-    link.href = '/resume.pdf'
+    link.href = '/Adam_Maatouk_Resume.pdf'
     link.download = 'Adam_Maatouk_Resume.pdf'
     document.body.appendChild(link)
     link.click()
