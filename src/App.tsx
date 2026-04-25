@@ -460,7 +460,7 @@ function App() {
                 <div className="experience__body">
                   <div className="experience__header">
                     <h3 className="experience__title">Before You Go - Pediatric VR Simulator</h3>
-                    <span className="experience__dates">Feb 2025</span>
+                    <span className="experience__dates">Feb 2026</span>
                   </div>
                   <p className="experience__role">2nd Place - CareXR Hack - Solo</p>
                   <ul className="experience__bullets">
@@ -477,7 +477,7 @@ function App() {
                 <div className="experience__body">
                   <div className="experience__header">
                     <h3 className="experience__title">Underdog - Sports Betting Recovery App</h3>
-                    <span className="experience__dates">Mar 2025</span>
+                    <span className="experience__dates">Mar 2026</span>
                   </div>
                   <p className="experience__role">3rd Place - BuildFast Hackathon - Solo</p>
                   <ul className="experience__bullets">
