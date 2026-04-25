@@ -387,17 +387,18 @@ function App() {
                 </div>
                 <div className="experience__body">
                   <div className="experience__header">
-                    <h3 className="experience__title">Athena AI / Devfortress</h3>
+                    <h3 className="experience__title">Athena AI</h3>
                     <span className="experience__dates">Mar 2025 – May 2025</span>
                   </div>
                   <p className="experience__role">Software Engineering Intern</p>
                   <ul className="experience__bullets">
-                    <li>Built and shipped production React and TypeScript features used by live users, improving frontend performance and load times by 35%.</li>
+                    <li>Contributed to Athena AI, a fast-growing startup with 3M+ users, building and shipping production React + TypeScript features used at scale.</li>
+                    <li>Improved frontend performance and load times by 35% through optimized rendering, lazy loading, and efficient state handling.</li>
                     <li>Refactored component architecture and state management, reducing unnecessary re-renders and improving UI responsiveness by 28%.</li>
                     <li>Developed Python-based AI evaluation pipelines to analyze model outputs and identify failure cases, increasing model accuracy by 18%.</li>
                     <li>Implemented real-time model tuning and fixes, reducing incorrect or low-confidence AI responses by 22%.</li>
                     <li>Diagnosed and resolved production issues using logs and metrics, reducing recurring user-reported bugs by 25%.</li>
-                    <li>Supported live product demos at World Summit AI, increasing partner engagement and inbound interest by approximately 15%.</li>
+                    <li>Supported live product demos at World Summit AI, contributing to increased partner engagement and inbound interest (~15%).</li>
                   </ul>
                   <a href="https://athenachat.bot/chatbot" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
