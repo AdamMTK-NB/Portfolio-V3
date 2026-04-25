@@ -193,12 +193,7 @@ function App() {
   }
 
   const handleResumeDownload = () => {
-    const link = document.createElement('a')
-    link.href = '/Adam_Maatouk_Resume.pdf'
-    link.download = 'Adam_Maatouk_Resume.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    window.open('/Adam_Maatouk_Resume.pdf', '_blank', 'noopener,noreferrer')
   }
 
   const handleExperienceTab = (tab: 'work' | 'education' | 'hackathons') => {
