@@ -382,7 +382,7 @@ function App() {
                 </div>
                 <div className="experience__body">
                   <div className="experience__header">
-                    <h3 className="experience__title">Meta Production Engineering Fellow</h3>
+                    <h3 className="experience__title">Meta x MLH</h3>
                     <span className="experience__dates">Jun 2026 – Aug 2026</span>
                   </div>
                   <p className="experience__role">Production Engineering Fellow</p>
