@@ -378,6 +378,31 @@ function App() {
             <ul className="experience__timeline">
               <li className="experience__entry">
                 <div className="experience__icon experience__icon--img">
+                  <img src="/rumy.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Rumy</h3>
+                    <span className="experience__dates">Dec 2025 – Present</span>
+                  </div>
+                  <p className="experience__role">Co-Founder / CTO</p>
+                  <ul className="experience__bullets">
+                    <li>Building a roommate-management mobile platform for chores, expenses, supplies, bookings, and shared household expectations.</li>
+                    <li>Leading product strategy, user research, UI/UX design, and full-stack development from concept through validation.</li>
+                    <li>Secured startup backing and mentorship from LvlUp Ventures and its community partner network.</li>
+                  </ul>
+                  <a href="https://rumyapp.com" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
+                  </a>
+                  <a href="https://www.lvlup.vc" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    LvlUp Ventures
+                  </a>
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
                   <img src="/meta.png" alt="" className="experience__icon-img" />
                 </div>
                 <div className="experience__body">
