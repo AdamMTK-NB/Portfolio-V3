@@ -67,7 +67,6 @@ const PROJECTS: Project[] = [
     subtext: 'Built and shipped a complete mobile app in 48 hours as a solo developer, focused on onboarding, tracking, and behavior-change UX.',
     techStack: 'React Native, TypeScript, Expo',
     image: 'Underdog.jpg',
-    websiteUrl: 'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fbuild.withwoz.com%2Fpublic-app-preview%3FwebUrl%3Dhttps%253A%252F%252Fwithwoz-apps--instant-bovid-338.expo.app%26projectName%3DUnderdog%26userName%3DAdam%2BMaatouk&urlhash=Kz8h&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BM%2BHTq1%2FIRsmlbguZUsW3xQ%3D%3D',
     imageObjectFit: 'contain',
   },
   {
