@@ -53,6 +53,14 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
+    id: 'rumy',
+    title: 'Rumy',
+    subtext: 'Building a roommate-management mobile platform for shared household expectations.',
+    techStack: 'React Native, TypeScript, Expo, Firebase',
+    image: 'rumy.png',
+    websiteUrl: 'https://rumyapp.com',
+  },
+  {
     id: 'before-you-go',
     title: 'Before You Go – Pediatric VR Simulator',
     subtext: 'Built solo in 48 hours for the CareXR Hackathon: a Meta Quest 3 VR app that helps pediatric patients understand procedures through interactive simulations.',
@@ -82,7 +90,6 @@ const PROJECTS: Project[] = [
     subtext: 'Led a 4-person team to build a full-stack AI-powered legal assistant. Integrated speech recognition and translation APIs for bilingual voice interaction. Awarded Hackathon Winner at ConUHacks IX.',
     techStack: 'React, TypeScript, Vite, AI API calls, Athena AI',
     image: 'bettercallsaul.png',
-    websiteUrl: 'https://better-call-saul-ai-delta.vercel.app/',
     sourceUrl: 'https://github.com/AdamMTK-NB/BetterCallSaulAI',
   },
   {
