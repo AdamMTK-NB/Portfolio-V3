@@ -30,7 +30,7 @@ const SKILLS: { name: string; url: string; logo: string; logoUrl?: string }[] = 
   { name: 'Unity', url: 'https://docs.unity.com/en-us', logo: 'unity' },
   { name: 'Dart', url: 'https://dart.dev/docs', logo: 'dart' },
   { name: 'Flutter', url: 'https://docs.flutter.dev', logo: 'flutter' },
-  { name: 'React Native', url: 'https://reactnative.dev/docs/getting-started', logo: 'react', logoUrl: 'https://cdn.simpleicons.org/react/61DAFB' },
+  { name: 'React Native', url: 'https://reactnative.dev/docs/getting-started', logo: 'react'},
   { name: 'Expo', url: 'https://docs.expo.dev/get-started/installation/', logo: 'expo', logoUrl: 'https://cdn.simpleicons.org/expo/4630EB' },
   { name: 'Oculus', url: 'https://developer.oculus.com/documentation/', logo: 'oculus', logoUrl: 'https://cdn.simpleicons.org/meta/0081FB' },
   { name: 'Linux', url: 'https://docs.kernel.org', logo: 'linux'},
