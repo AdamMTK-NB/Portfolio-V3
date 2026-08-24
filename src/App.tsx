@@ -415,8 +415,10 @@ function App() {
                   </div>
                   <p className="experience__role">Production Engineering Fellow</p>
                   <ul className="experience__bullets">
-                    <li>Mastering core Production Engineering (PE) and Site Reliability Engineering (SRE) concepts, focusing on system architecture, Linux internals, network protocols, and scripting. Collaborating on open-source projects and simulated real-world production environments to optimize system performance, reliability, and scalability.</li>
-                    <li>Partnering with industry mentors and peer engineers in an agile environment, utilizing Git version control, code reviews, and comprehensive post-mortems.</li>
+                    <li>Completed 12-weeks of structured curriculum-based learning covering core Production Engineering topics, supplemented with events / workshops hosted by industry experts.</li>
+                    <li>Created an open-source personal portfolio website template using Python, Flask, Jinja, MySQL, Nginx, and unittest.</li>
+                    <li>Automated testing and deployment workflows using CI/CD.</li>
+                    <li>Set up system and container monitoring, alerting, and visualization using Prometheus and Grafana.</li>
                   </ul>
                   <a href="https://fellowship.mlh.com/programs/production-engineering-sre" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
