@@ -388,7 +388,7 @@ function App() {
                     <h3 className="experience__title">Rumy</h3>
                     <span className="experience__dates">Dec 2025 – Present</span>
                   </div>
-                  <p className="experience__role">Co-Founder / CTO</p>
+                  <p className="experience__role">Co-Founder / CTO · Remote</p>
                   <ul className="experience__bullets">
                     <li>Building a roommate-management mobile platform for chores, expenses, supplies, bookings, and shared household expectations.</li>
                     <li>Leading product strategy, user research, UI/UX design, and full-stack development from concept through validation.</li>
@@ -398,9 +398,47 @@ function App() {
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     Website
                   </a>
-                  <a href="https://www.lvlup.vc" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
+                  <img src="/loi.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">League of Innovators</h3>
+                    <span className="experience__dates">Sep 2026 – Present</span>
+                  </div>
+                  <p className="experience__role">Labs 17 Founder · Canada</p>
+                  <ul className="experience__bullets">
+                    <li>Selected for Labs 17, League of Innovators’ competitive 12-week accelerator for young Canadian founders pursuing product-market fit.</li>
+                    <li>Advancing Rumy through customer discovery, rapid product iteration, growth experiments, and structured founder mentorship.</li>
+                    <li>Participating in expert-led workshops, founder sessions, and peer accountability groups focused on product, sales, leadership, and pitching.</li>
+                  </ul>
+                  <a href="https://www.loi.ac/programs/labs" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                    LvlUp Ventures
+                    Website
+                  </a>
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
+                  <img src="/base44.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">Base44</h3>
+                    <span className="experience__dates">Sep 2026 – Present</span>
+                  </div>
+                  <p className="experience__role">Campus Impact Leader · Montreal, QC</p>
+                  <ul className="experience__bullets">
+                    <li>Selected for the founding class of Base44 Campus Impact Leaders, a global student network expanding AI-powered app development on university campuses.</li>
+                    <li>Leading Base44 adoption at Concordia University through student events, community initiatives, and educational content.</li>
+                    <li>Collaborating directly with Base44’s global team and student leaders to develop campus campaigns and provide product feedback.</li>
+                  </ul>
+                  <a href="https://campusimpactleaders.base44.app" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
                   </a>
                 </div>
               </li>
@@ -413,7 +451,7 @@ function App() {
                     <h3 className="experience__title">Meta x MLH</h3>
                     <span className="experience__dates">Jun 2026 – Aug 2026</span>
                   </div>
-                  <p className="experience__role">Production Engineering Fellow</p>
+                  <p className="experience__role">Production Engineering Fellow · Remote</p>
                   <ul className="experience__bullets">
                     <li>Completed 12-weeks of structured curriculum-based learning covering core Production Engineering topics, supplemented with events / workshops hosted by industry experts.</li>
                     <li>Created an open-source personal portfolio website template using Python, Flask, Jinja, MySQL, Nginx, and unittest.</li>
@@ -428,6 +466,27 @@ function App() {
               </li>
               <li className="experience__entry">
                 <div className="experience__icon experience__icon--img">
+                  <img src="/lvlup.png" alt="" className="experience__icon-img" />
+                </div>
+                <div className="experience__body">
+                  <div className="experience__header">
+                    <h3 className="experience__title">LvlUp Ventures</h3>
+                    <span className="experience__dates">May 2026 – Aug 2026</span>
+                  </div>
+                  <p className="experience__role">LvlUp Labs Founder · Remote</p>
+                  <ul className="experience__bullets">
+                    <li>Selected for LvlUp Labs, a founder-focused startup program providing hands-on support through LvlUp Ventures’ investor and mentor network.</li>
+                    <li>Refined Rumy’s product strategy, positioning, and go-to-market approach through mentorship, founder programming, and expert office hours.</li>
+                    <li>Connected with founders, investors, and industry professionals across LvlUp Ventures’ startup ecosystem.</li>
+                  </ul>
+                  <a href="https://www.lvlup.vc/labs" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
+                    <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Website
+                  </a>
+                </div>
+              </li>
+              <li className="experience__entry">
+                <div className="experience__icon experience__icon--img">
                   <img src="/athena.png" alt="" className="experience__icon-img" />
                 </div>
                 <div className="experience__body">
@@ -435,15 +494,12 @@ function App() {
                     <h3 className="experience__title">Athena AI</h3>
                     <span className="experience__dates">Mar 2025 – May 2025</span>
                   </div>
-                  <p className="experience__role">Software Engineering Intern</p>
+                  <p className="experience__role">Software Engineering Intern · Montreal, QC</p>
                   <ul className="experience__bullets">
-                    <li>Contributed to Athena AI, a fast-growing startup with 3M+ users, building and shipping production React + TypeScript features used at scale.</li>
-                    <li>Improved frontend performance and load times by 35% through optimized rendering, lazy loading, and efficient state handling.</li>
-                    <li>Refactored component architecture and state management, reducing unnecessary re-renders and improving UI responsiveness by 28%.</li>
-                    <li>Developed Python-based AI evaluation pipelines to analyze model outputs and identify failure cases, increasing model accuracy by 18%.</li>
-                    <li>Implemented real-time model tuning and fixes, reducing incorrect or low-confidence AI responses by 22%.</li>
-                    <li>Diagnosed and resolved production issues using logs and metrics, reducing recurring user-reported bugs by 25%.</li>
-                    <li>Supported live product demos at World Summit AI, contributing to increased partner engagement and inbound interest (~15%).</li>
+                    <li>Contributed to Athena AI, a fast-growing startup with 3M+ users, building and shipping React + TypeScript features.</li>
+                    <li>Lifted model accuracy from 74% to 92% by building Python pipelines to analyze and cluster failure cases.</li>
+                    <li>Closed 31 of 40 recurring production tickets through log-based root cause analysis and targeted fixes.</li>
+                    <li>Supported live product demos at World Summit AI, contributing to increased partner support and user interest by 15%.</li>
                   </ul>
                   <a href="https://athenachat.bot/chatbot" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
