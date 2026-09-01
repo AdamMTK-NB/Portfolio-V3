@@ -390,9 +390,9 @@ function App() {
                   </div>
                   <p className="experience__role">Co-Founder / CTO · Remote</p>
                   <ul className="experience__bullets">
-                    <li>Building a roommate-management mobile platform for chores, expenses, supplies, bookings, and shared household expectations.</li>
                     <li>Leading product strategy, user research, UI/UX design, and full-stack development from concept through validation.</li>
-                    <li>Secured startup backing and mentorship from LvlUp Ventures and its community partner network.</li>
+                    <li>Selected for LvlUp Ventures’ LvlUp Labs program, gaining access to hands-on mentorship, investor guidance, and more.</li>
+                    <li>Selected for League of Innovators’ Labs 17 accelerator to advance Rumy’s customer validation, product strategy, and more.</li>
                   </ul>
                   <a href="https://rumyapp.com" target="_blank" rel="noopener noreferrer" className="experience__project-btn">
                     <svg className="experience__project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
